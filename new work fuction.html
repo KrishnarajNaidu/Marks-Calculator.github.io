@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            font-size: 20px;
+        }
+
+        input {
+            border-radius: 15px;
+            border-color: rgb(219, 219, 219);
+            margin-left: 30px;
+            height: 20px;
+            width: 220px;
+        }
+
+        .move {
+            margin-left: 40px;
+        }
+
+        h1 {
+            color: rgb(165, 47, 255);
+            padding-top:10px ;
+        }
+
+        h4 {
+            color: rgb(165, 59, 240);
+            background-color: rgb(255, 255, 255);
+            width: 65px;
+        }
+
+        form {
+            background-color: rgb(232, 229, 229);
+            width: 25%;
+            padding-left: 40px;
+            height: 350px;
+            border-radius: 30px;
+            margin-left: 30px;
+            box-shadow: 2px 2px 10px 1px rgb(85, 85, 85) ;
+        }
+
+        .btn {
+            margin-left: 10px;
+            margin-top: 10px;
+            height: 30px;
+            width: 80px;
+            border-radius: 5px;
+            color: blueviolet ;
+        }
+        .btn:hover{
+            background-color: rgb(146, 90, 205);
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(216, 189, 254);">
+    <form>
+        <h1>Result :</h1>
+
+        <label for="name">Name</label>
+        <input type="text" id="name" class="move">
+
+        <h4><u>Subject...</u></h4>
+
+        <label for="English">English</label>
+        <input type="text" id="English" maxlength="3"><br><br>
+
+        <label for="Maths">Maths</label>
+        <input type="text" id="Maths" maxlength="3" class="move"><br><br>
+
+        <label for="Science">Science</label>
+        <input type="text" id="Science" maxlength="3"><br><br>
+
+        <input type="button" value="Result" class="btn" onclick="getResult();">
+        <input type="reset" class="btn">
+    </form>
+    <br><br>
+    <hr><br><br>
+    <div id="dec">
+        <p id="heading"></p>
+    <p id="output"></p>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+    <p id="output4"></p>
+    <p id="output5"></p>
+</div>
+    <script>
+        function getResult() {
+            var name = document.getElementById("name").value;
+            var Eng = document.getElementById("English").value;
+            var mat = document.getElementById("Maths").value;
+            var sci = document.getElementById("Science").value;
+
+            var data = "Name : " + name;
+            document.getElementById("output").textContent = data;
+
+            var data1 = "English : " + Eng;
+            document.getElementById("output1").textContent = data1;
+
+            var data2 = "Maths : " + mat;
+            document.getElementById("output2").textContent = data2;
+
+            var data3 = "Science : " + sci;
+            document.getElementById("output3").textContent = data3;
+
+            var total = "Total = " + (parseInt(Eng) + parseInt(mat) + parseInt(sci)) + "/300";
+            document.getElementById("output4").textContent = total;
+
+            var per = "Percentage = " + (parseInt(Eng) + parseInt(mat) + parseInt(sci)) / 3+"%";
+            document.getElementById("output5").textContent = per;
+
+            document.getElementById("dec").style.backgroundColor='rgb(232, 229, 229)';
+            document.getElementById("dec").style.borderRadius='30px';
+            document.getElementById("dec").style.width='25%';
+            document.getElementById("dec").style.height='270px';
+            document.getElementById("dec").style.paddingLeft='40px';
+            document.getElementById("dec").style.paddingTop='10px';
+            document.getElementById("dec").style.fontSize='16px';
+            document.getElementById("dec").style.marginLeft='30px';
+            document.getElementById("dec").style.boxShadow=' 2px 2px 10px 1px rgb(85, 85, 85)';
+       
+       document.getElementById("heading").innerHTML="OUTPUT"
+       document.getElementById("heading").style.fontSize='20px';
+       document.getElementById("heading").style.fontWeight='bold';
+       document.getElementById("heading").style.backgroundColor='red';
+       document.getElementById("heading").style.color='white';
+       document.getElementById("heading").style.width='25%';
+       document.getElementById("heading").style.paddingLeft='6px';
+        }
+    </script>
+</body>
+
+</html>
